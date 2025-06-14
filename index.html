@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <script src="confetti.js"></script>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div id="scoreboard">
+        <span>Pemain X: <span id="scoreX">0</span></span>
+        <span>Pemain O: <span id="scoreO">0</span></span>
+    </div>
+    <div id="gameBoard"></div>
+    <div id="controls">
+        <button onclick="restartGame()">Restart Game</button>
+        <button onclick="resetScores()">Reset Skor</button>
+    </div>
+    <script src="script.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+        .then(registration => {
+            console.log('ServiceWorker registered: ', registration);
+        })
+        .catch(error => {
+            console.log('ServiceWorker registration failed: ', error);
+        });
+    });
+}
+</script>
+
+</body>
+</html>
